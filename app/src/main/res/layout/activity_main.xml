@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--전체 리니어 레이아웃
+    LinearLayout height 기능을 잘 모르겠어서 임의로 설정함, 수정 필요-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--빨간색 부분
+        네비게이션 버튼만 구현함
+        2번째 버튼 검색창은 글씨입력하면 글씨나오게 해야함: 홍드로이드 #16 다이얼로그 팝업창 참고
+        3번째 버튼 눌렀을 때 검색창에 입력한 결과 값 출력-->
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1.5"
+            android:background="#FFCECE"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_open"
+                android:text="|"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/searchbar"
+                android:text="검색창"
+                android:layout_width="240dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/search"
+                android:text="S"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <!--주황색 부분
+        realative layout 사진 간격 조정해야함-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="10"
+            android:background="#D8F6B6"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F4E099"
+                android:gravity="center">
+
+               <TextView
+                   android:id="@+id/A"
+                   android:text="사진 1"
+                   android:layout_width="150dp"
+                   android:layout_height="150dp"
+                   android:layout_margin="10dp"
+                   android:background="#F8F4F4" />
+
+                <TextView
+                    android:id="@+id/B"
+                    android:text="사진 2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:background="#F8F6F6"
+                    android:layout_toRightOf="@+id/A"/>
+
+                <TextView
+                    android:id="@+id/C"
+                    android:text="사진 3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:background="#FDFAFA"
+                    android:layout_below="@+id/A"/>
+
+                <TextView
+                    android:id="@+id/D"
+                    android:text="사진 4"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="#FAF6F6"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/C"
+                    android:layout_below="@+id/B"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--하늘색 부분
+        하단바 버튼 눌렀을 때 화면 전환 되는 기능 추가해야함: 홍드로이드 #25 하단바 만들기 참고
+        1번째 버튼: 옷 등록
+        2번째 버튼: 후기 작성
+        3번째 버튼: 홈화면
+        4번째 버튼: 즐겨찾기
+        5번째 버튼: 마이페이지/기업페이지
+-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1.5"
+            android:background="#B3EDF6"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/add"
+                android:text="+"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/review"
+                android:text="+"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/home"
+                android:text="+"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/favorites"
+                android:text="+"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/mypage"
+                android:text="+"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#D8D5D5"
+                android:textColor="#000000" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <include layout = "@layout/activity_drawer"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
